@@ -20,6 +20,7 @@ div{
     display: inline-block;
 }
 .anuncio{
+    background-color: yellow;
     display: inline-block;
 }
 
@@ -38,6 +39,7 @@ div{
 }
 .anunciante{
     background-color: white;
+    margin: 100px;
     color: #232323;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -51,15 +53,13 @@ div{
 
 
 .container {
+    background-color: red;
     padding-left: 100px;
     padding-right: 100px;
     min-height: 100vh;
     color:white;
     margin: 100px;
     border-radius: 10px;
-    
-    
-   
     
 }
 
