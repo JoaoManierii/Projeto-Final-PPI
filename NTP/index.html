@@ -8,6 +8,7 @@
     <title>NTP</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
 </head>
 
 <body>
@@ -15,11 +16,14 @@
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a class="item" href='index.html'><img src="images/logos/logo.png"></a></li>
-                    <li><a class="item" href="index.html">Pagina Inicial</a></li>
-                    <li><a class="item" href="index.html">Mensagens</a></li>
-                    <li><a class="item">Anuncios</a></li>
-                    <li class="button-login"><a>Login</a></li>
+                    <li><a href='index.html'><img src="images/logos/logo.png"></a></li>
+                    <li class="navbar-menu" id="navbar-menu"><img src="./images/icons/menu.svg" alt=""></li>
+                    <div class="navbar-item" id="navbar-item">
+                        <li class="navbar-item-li"><a href="index.html">Pagina Inicial</a></li>
+                        <li class="navbar-item-li"><a href="index.html">Mensagens</a></li>
+                        <li class="navbar-item-li"><a>Anuncios</a></li>
+                        <li class="button-login navbar-item-li"><a>Login</a></li>
+                    </div>
                 </ul>
             </div>
         </nav>
@@ -44,13 +48,13 @@
         <section name='product-list' class="section-cards">
             <div class="search">
                 <ul>
-                    <li>
-                        <input type="text" placeholder="Pesquise aqui seu novo produto!">
-                    </li>
-                    <li>
+                    <li class="button-img">
                         <button type="submit">
                             <img src="./images/icons/search.svg" alt="">
                         </button>
+                    </li>
+                    <li>
+                        <input type="text" placeholder="Pesquise aqui seu novo produto!">
                     </li>
                 </ul>
             </div>

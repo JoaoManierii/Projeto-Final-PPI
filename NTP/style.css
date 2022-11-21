@@ -26,6 +26,10 @@ body {
     max-width: 45px;
 }
 
+.navbar-menu {
+    display: none;
+}
+
 .navbar ul {
     list-style-type: none;
     overflow: hidden;
@@ -88,18 +92,19 @@ body {
 }
 
 .search {
-    margin: 50px 15px 20px 10px;
+    margin: 0 auto;
     width: 100%;
     position: relative;
+    margin: 50px 15px 20px 10px;
 }
 
 .search input {
-    width: 300px;
+    width: 30em;
     border: 3px solid hsl(47, 100%, 49%);
-    border-right: none;
+    border-left: none;
     padding: 5px;
     height: 36px;
-    border-radius: 5px 0 0 5px;
+    border-radius: 0 5px 5px 0;
     outline: none;
     color: #9DBFAF;
 }
@@ -115,7 +120,7 @@ body {
     background: hsl(47, 100%, 49%);
     text-align: center;
     color: #fff;
-    border-radius: 0 5px 5px 0;
+    border-radius: 5px 0 0 5px;
     cursor: pointer;
     font-size: 20px;
 }
@@ -191,4 +196,84 @@ body {
 
 .footer li a {
     color: whitesmoke;
+}
+
+@media (max-width: 1440px) {
+    .container {
+        padding: 0;
+    }
+}
+
+@media (max-width: 1024px) {
+    .title img {
+        width: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .title-section {
+        padding: 20px;
+    }
+    
+    .title img {
+        display: none;
+    }
+
+    .navbar li:hover {
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .navbar li:active {
+        filter: invert(100%);
+    }
+
+    .navbar .navbar-item {
+        display: none;
+    }
+
+    .navbar .navbar-item li:hover {
+        background-color: lightgray;
+    }
+
+    .navbar .navbar-item-li {
+        width: 100%;
+    }
+
+    .navbar .navbar-menu {
+        display: block;
+        margin: 0 15px;
+        float: right;
+    }
+
+    .navbar .navbar-menu img {
+        margin: 5px;
+    }
+
+    .cards li {
+        width: 100%;
+    }
+    .cards img {
+        width: 100%;
+    }
+
+    .search input {
+        width: 70vw;
+    }
+
+    .footer li{
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 530px) {
+    .search input {
+        width: 60vw;
+    }
+}
+@media (max-width: 400px) {
+    .search input {
+        width: 50vw;
+    }
 }
