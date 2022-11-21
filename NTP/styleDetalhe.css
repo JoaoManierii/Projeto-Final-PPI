@@ -12,11 +12,57 @@ body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-.container {
-    padding-left: 300px;
-    padding-right: 300px;
-    min-height: 100vh
+img{
+    border-radius: 10px;
+    
 }
+div{
+    display: inline-block;
+}
+.anuncio{
+    display: inline-block;
+}
+
+.anuncio img{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.anuncio h2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.anuncio .small{
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.anunciante{
+    background-color: white;
+    color: #232323;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+}
+.anunciante img{
+    border-radius: 50px;
+}
+
+
+.container {
+    padding-left: 100px;
+    padding-right: 100px;
+    min-height: 100vh;
+    color:white;
+    margin: 100px;
+    border-radius: 10px;
+    
+    
+   
+    
+}
+
 
 .navbar {
     background-color: #333;
@@ -91,85 +137,7 @@ body {
     width: 200px;
 }
 
-.search {
-    margin: 0 auto;
-    width: 100%;
-    position: relative;
-    margin: 50px 15px 20px 10px;
-}
 
-.search input {
-    width: 30em;
-    border: 3px solid hsl(47, 100%, 49%);
-    border-left: none;
-    padding: 5px;
-    height: 36px;
-    border-radius: 0 5px 5px 0;
-    outline: none;
-    color: #9DBFAF;
-}
-
-.search input:focus {
-    color: hsl(47, 100%, 49%);
-}
-
-.search button {
-    width: 40px;
-    height: 36px;
-    border: 1px solid hsl(47, 100%, 49%);
-    background: hsl(47, 100%, 49%);
-    text-align: center;
-    color: #fff;
-    border-radius: 5px 0 0 5px;
-    cursor: pointer;
-    font-size: 20px;
-}
-
-.search img {
-    width: 25px;
-    margin: 5px;
-    filter: invert(100%);
-}
-
-.search ul {
-    list-style-type: none;
-    overflow: hidden;
-}
-
-.search li {
-    float: left;
-}
-
-.section-cards {
-    padding: 0 50px;
-    margin-bottom: 50px;
-}
-.cards ul {
-    list-style-type: none;
-    overflow: hidden;
-}
-
-.cards li {
-    float: left;
-}
-
-.card {
-    margin: 10px;
-    padding: 10px;
-    background-color: whitesmoke;
-    border-radius: 12px;
-}
-
-.card img {
-    width: 200px;
-    height: 200px;
-    border-radius: 8px;
-}
-
-.card .txt {
-    font-size: 18px;
-    margin: 6px 6px;
-}
 
 .footer {
     padding: 20px;
@@ -181,6 +149,7 @@ body {
     margin-bottom: 20px;
     color: rgb(163, 160, 160);
 }
+
 
 .footer ul {
     display: inline-block;
