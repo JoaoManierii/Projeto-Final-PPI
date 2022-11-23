@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../css/style-anuncio.css">
     <title>Iphone 258GB</title>
+    <link rel="stylesheet" href="../css/style-anuncio.css">
+    <script src="./js/main.js"></script>
+    <script type="module" src="../js/anuncio.js"></script>
 </head>
 
 <body>
@@ -14,13 +16,13 @@
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a href='../../index.html'><img src="../../images/logos/logo.png"></a></li>
-                    <li class="navbar-menu" id="navbar-menu"><img src="../../images/icons/menu.svg" alt=""></li>
+                    <li><a href='../index.html'><img src="../images/logos/logo.png"></a></li>
+                    <li class="navbar-menu" id="navbar-menu"><img src="../images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
-                        <li class="navbar-item-li"><a href="../../index.html">Pagina Inicial</a></li>
-                        <li class="navbar-item-li"><a href="../demonstracao.html">Demo</a></li>
+                        <li class="navbar-item-li"><a href="../index.html">Pagina Inicial</a></li>
+                        <li class="navbar-item-li"><a href="../demonstracao.html">Demonstraçao</a></li>
                         <li class="navbar-item-li"><a>Anuncios</a></li>
-                        <li class="button-login navbar-item-li"><a>Login</a></li>
+                        <li class="button-login navbar-item-li"><a href="./login.html">Login</a></li>
                     </div>
                 </ul>
             </div>
@@ -29,25 +31,25 @@
     <div class="container">
         <div class="anuncio-container">
             <div class="anuncio-title">
-                <h1>Iphone XR 128GB 88% Bateria</h1>
+                <h1 id="title">Iphone XR 128GB 88% Bateria</h1>
             </div>
             <div class="anuncio-img">
-                <img src="../../images/index/iphone.jpg">
-                <div class="small">Publicado em 21/11/2022 às 17:34</div>
+                <img src="../images/index/iphone.jpg" id="productPhoto">
+                <div class="small" id="published">Publicado em 21/11/2022 às 17:34</div>
             </div>
             <div class="anuncio-info">
-                <h2>R$2.300</h2>
+                <h2 id="price">R$2.300</h2>
                 <div class="anuncio-descricao">
                     <h3>Descrição</h3>
-                    <p>Iphone XR 128GB, bateria com 88%, 1 ano de uso, bem cuidado, com poucos detalhes...</p>
+                    <p id="description">Iphone XR 128GB, bateria com 88%, 1 ano de uso, bem cuidado, com poucos detalhes...</p>
                 </div>
                 <!-- <a href="">Ver descrição completa</a> -->
             </div>
         </div>
         <div class="anuncio-anunciante">
-            <img src="../../images/index/touca.png" alt="" width="50" height="50">
-            <h2 class="anunciante-name">Felipinho</h2>
-            <h2 class="anunciante-tel">(34)888888888</h2>
+            <img src="../images/index/touca.png" alt="" id="photo">
+            <h2 class="anunciante-name" id="name">Felipinho</h2>
+            <h2 class="anunciante-tel" id="tel">(34)888888888</h2>
             <button class="button-comprar">Comprar</button>
             <button class="button-chat">Chat</button>
         </div>

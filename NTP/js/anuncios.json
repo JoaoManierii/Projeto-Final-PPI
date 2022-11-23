@@ -1,5 +1,38 @@
 {
     "iphone": {
-        
+        "title": "Iphone XR 128GB 88% Bateria",
+        "productPhoto": "",
+        "published": "21/11/2022",
+        "price": "2.300",
+        "description": "Iphone XR 128GB, bateria com 88%, 1 ano de uso, bem cuidado, com poucos detalhes...",
+        "advertiser": {
+            "name": "Felipinho",
+            "tel": "(34) 984618632",
+            "photo": ""
+        }
+    },
+    "toca": {
+        "title": "Toca de Natacao",
+        "productPhoto": "",
+        "published": "05/09/2022",
+        "price": "20",
+        "description": "Toca de Natacao e Oculos...",
+        "advertiser": {
+            "name": "Luquinha",
+            "tel": "(24) 981462798",
+            "photo": ""
+        }
+    },
+    "jeep": {
+        "title": "JEEP COMPASS 2028",
+        "productPhoto": "",
+        "published": "11/05/2022",
+        "price": "83.500",
+        "description": "Jepp Compass 2028 brabao fi",
+        "advertiser": {
+            "name": "Markin",
+            "tel": "(11) 988124728",
+            "photo": ""
+        }
     }
 }
