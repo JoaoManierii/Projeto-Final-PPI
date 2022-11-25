@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+.none {
+    display: none;
+}
+
 .container {
     padding-left: 300px;
     padding-right: 300px;
