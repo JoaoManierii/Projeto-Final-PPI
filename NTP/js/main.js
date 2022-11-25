@@ -2,7 +2,7 @@ window.onload = () => {
     let menu = document.getElementById('navbar-menu');
     let item = document.getElementById('navbar-item');
     let clicked = false
-
+    console.log(menu);
     menu.addEventListener('click', () => {
         if (!clicked) {
             item.style.display = 'block';
