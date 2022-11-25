@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 1s;
 }
 
 body {
@@ -149,7 +150,6 @@ a {
     margin-bottom: 50px;
 }
 
-
 .cards {
     display: grid;
     grid-template-columns: auto auto auto auto auto;
@@ -162,6 +162,11 @@ a {
     background-color: whitesmoke;
     border-radius: 8px;
     max-width: 200px;
+}
+
+.card:hover {
+    background-color: #fff;
+    transform: scale(1.05);
 }
 
 .card img {
@@ -213,6 +218,16 @@ a {
     .title img {
         width: 100px;
     }
+
+    .cards {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: auto auto;
+    }
 }
 
 @media (max-width: 600px) {
@@ -255,10 +270,16 @@ a {
         margin: 5px;
     }
 
-    .cards li {
-        width: 100%;
+    .cards {
+        grid-template-columns: auto;
     }
-    .cards img {
+    
+    .card {
+        margin: 10px 60px;
+        max-width: 100%;
+    }
+
+    .card img {
         width: 100%;
     }
 
@@ -276,7 +297,13 @@ a {
     .search input {
         width: 60vw;
     }
+    
+    .card {
+        margin: 10px;
+        max-width: 100%;
+    }
 }
+
 @media (max-width: 400px) {
     .search input {
         width: 50vw;

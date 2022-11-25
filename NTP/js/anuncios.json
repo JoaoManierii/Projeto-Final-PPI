@@ -1,38 +1,32 @@
 {
     "iphone": {
-        "title": "Iphone XR 128GB 88% Bateria",
-        "productPhoto": "",
-        "published": "21/11/2022",
-        "price": "2.300",
-        "description": "Iphone XR 128GB, bateria com 88%, 1 ano de uso, bem cuidado, com poucos detalhes...",
-        "advertiser": {
-            "name": "Felipinho",
-            "tel": "(34) 984618632",
-            "photo": ""
-        }
+        "productTitle": "Iphone XR 128GB 88% Bateria",
+        "productPhoto": "https://img.olx.com.br/images/52/523237684255027.jpg",
+        "productPublished": "21/11/2022",
+        "productPrice": "2.300",
+        "productDescription": "Iphone XR 128GB, bateria com 88%, 1 ano de uso, bem cuidado, com poucos detalhes...",
+        "announcerName": "Felipinho",
+        "announcerTel": "(34) 984618632",
+        "announcerPhoto": "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
     },
     "touca": {
-        "title": "Touca de Natacao",
-        "productPhoto": "",
-        "published": "05/09/2022",
-        "price": "20",
-        "description": "Touca de Natacao e Oculos...",
-        "advertiser": {
-            "name": "Luquinha",
-            "tel": "(24) 981462798",
-            "photo": ""
-        }
+        "productTitle": "Touca de Natacao",
+        "productPhoto": "https://img.olx.com.br/images/85/859245691781102.jpg",
+        "productPublished": "05/09/2022",
+        "productPrice": "20",
+        "productDescription": "Touca de Natacao e Oculos...",
+        "announcerName": "Luquinha",
+        "announcerTel": "(24) 981462798",
+        "announcerPhoto": "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
     },
     "jeep": {
-        "title": "JEEP COMPASS 2028",
-        "productPhoto": "",
-        "published": "11/05/2022",
-        "price": "83.500",
-        "description": "Jepp Compass 2028 brabao fi",
-        "advertiser": {
-            "name": "Markin",
-            "tel": "(11) 988124728",
-            "photo": ""
-        }
+        "productTitle": "JEEP COMPASS 2028",
+        "productPhoto": "https://img.olx.com.br/images/11/110086593570479.jpg",
+        "productPublished": "11/05/2022",
+        "productPrice": "83.500",
+        "productDescription": "Jepp Compass 2028 brabao fi",
+        "announcerName": "Markin",
+        "announcerTel": "(11) 988124728",
+        "announcerPhoto": "https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png"
     }
 }
