@@ -30,19 +30,13 @@
 
     <div class="login-page">
       <div class="form">
-        <form class="register-form">
-          <input type="text" placeholder="name">
-          <input type="password" placeholder="password">
-          <input type="text" placeholder="email address">
-          <button>Criar</button>
-        </form>
-        <form class="login-form">
-          <input type="text" placeholder="Usuário">
-          <input type="password" placeholder="Senha">
-          <input type="email" placeholder="Email">
-          <input type="tel" placeholder="Telefone ">
+        <form class="login-form" action="cadastro.php" method="post">
+          <input type="text" placeholder="Nome" name="nome" id="nome">
+          <input type="text" placeholder="CPF" name="cpf" id="cpf">
+          <input type="email" placeholder="Email" name="email" id="email">
+          <input type="password" placeholder="Senha" name="senha" id="senha">
+          <input type="text" placeholder="Telefone" name="telefone" id="telefone">
           <button>Cadastrar</button>
-          <p class="message"></p>
         </form>
       </div>
     </div>
