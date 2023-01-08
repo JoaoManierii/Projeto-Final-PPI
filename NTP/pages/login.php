@@ -33,6 +33,6 @@ $email = $_POST["email"] ?? "";
 $senha = $_POST["senha"]?? "";
 
 if (checkLogin($pdo, $email, $senha))
-  header("location: demonstracao.html");
+  header("location: paginaLogados.html");
 else
   header("location: anuncio.html");
