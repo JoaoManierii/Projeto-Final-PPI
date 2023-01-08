@@ -8,6 +8,7 @@
     <title>Cadastro de Anuncio</title>
     <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style-anuncio.css">
+    <link rel="stylesheet" href="../css/style-anunciar.css">
     <script src="../js/main.js"></script>
     <script type="module" src="../js/anuncio.js"></script>
 </head>
@@ -27,17 +28,73 @@
                 </ul>
             </div>
         </nav>
-    <footer class="footer-section">
-        <div class="footer">
-            <h4>Copyright &copy; 2022, Todos os direitos reservados</h4>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Termos</a></li>
-                <li><a href="#">Privacidade</a></li>
-                <li><a href="#">Politica</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-    </footer>
+        <main>
+            <div class="login-page">
+                <div class="form">
+                    <form class="login-form" action="cadastro.php" method="post">
+                        <input type="text" placeholder="Titulo" name="titulo" id="titulo">
+                        <input type="text" placeholder="Descriçao" name="descr" id="descr">
+                        <input type="number" placeholder="Preço" name="preco" id="preco">
+                        <input type="date" placeholder="Data e Hora" name="dataHora" id="dataHora">
+                        <input type="number" placeholder="CEP" name="cep" id="cep">
+                        <input type="text" placeholder="Bairro" name="bairro" id="bairro">
+                        <input type="text" placeholder="Cidade" name="cidade" id="cidade">
+                        <select class="form-select" name="estado" id="estado">
+                            <option value="" disabled selected>Estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                <select  name="codCategotia" id="codCategoria">
+                    <option value="" disabled selected>Categoria</option>
+                    <option value="6">Veiculo</option>
+                    <option value="7">Eletroeletronico</option>
+                    <option value="8">Imovel</option>
+                    <option value="9">Movel</option>
+                    <option value="10">Vestuario</option>
+                    <option value="11">Outros</option>
+                </select>
+                <button>Cadastrar</button>
+                </form>
+            </div>
+            </div>
+        </main>
+        <footer class="footer-section">
+            <div class="footer">
+                <h4>Copyright &copy; 2022, Todos os direitos reservados</h4>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Termos</a></li>
+                    <li><a href="#">Privacidade</a></li>
+                    <li><a href="#">Politica</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+        </footer>
 </body>
+
 </html>
