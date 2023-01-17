@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/style-anuncio.css">
     <link rel="stylesheet" href="../css/style-anunciar.css">
     <script src="../js/main.js"></script>
-    <script type="module" src="../js/anuncio.js"></script>
+    
 </head>
 
 <body>
@@ -31,11 +31,19 @@
         <main>
             <div class="login-page">
                 <div class="form">
-                    <form class="login-form" action="cadastro.php" method="post">
+                    <form class="login-form" action="cadastraAnun.php" method="post">
+                        <div class="galeria">
+                            <label class="imagens" tabindex="0">
+                                <p class="insert">INSERIR IMAGEM</p>
+                                <input class="imgInput" type="file" accept="image/*" name="nomeArqFoto">
+                                <span class="imgImage">
+                                    <img id="imgs" class="imgs" src="">
+                                </span>
+                            </label>
+                        </div>
                         <input type="text" placeholder="Titulo" name="titulo" id="titulo">
                         <input type="text" placeholder="Descriçao" name="descr" id="descr">
                         <input type="number" placeholder="Preço" name="preco" id="preco">
-                        <input type="date" placeholder="Data e Hora" name="dataHora" id="dataHora">
                         <input type="number" placeholder="CEP" name="cep" id="cep">
                         <input type="text" placeholder="Bairro" name="bairro" id="bairro">
                         <input type="text" placeholder="Cidade" name="cidade" id="cidade">
@@ -69,13 +77,13 @@
                             <option value="SE">Sergipe</option>
                             <option value="TO">Tocantins</option>
                         </select>
-                <select  name="codCategotia" id="codCategoria">
+                <select  name="codCategoria" id="codCategoria">
                     <option value="" disabled selected>Categoria</option>
-                    <option value="6">Veiculo</option>
-                    <option value="7">Eletroeletronico</option>
-                    <option value="8">Imovel</option>
-                    <option value="9">Movel</option>
-                    <option value="10">Vestuario</option>
+                    <option value="6">Veículo</option>
+                    <option value="7">Eletroeletrônico</option>
+                    <option value="8">Imóvel</option>
+                    <option value="9">Móvel</option>
+                    <option value="10">Vestuário</option>
                     <option value="11">Outros</option>
                 </select>
                 <button>Cadastrar</button>
@@ -95,6 +103,34 @@
                 </ul>
             </div>
         </footer>
+
+        <script>
+            
+            const inputFile =  document.querySelector('.imgInput');
+            const spanImage = document.querySelector('.imgImage');
+    
+            inputFile.addEventListener('change', function(e){
+                const inputTarget = e.target;
+                const file = inputTarget.files[0];
+    
+                if (file){
+                    const reader = new FileReader();
+                    reader.addEventListener('load', function(e){
+                        const readerTarget = e.target;
+                        const img =  document.createElement('img');
+                        img.src = readerTarget.result;
+                        img.classList.add('imgs');
+    
+                        spanImage.appendChild(img);
+                    });
+                    reader.readAsDataURL(file);
+                }else{
+                    spanImage.innerHTML = spanImageText;
+                }
+            })
+    
+    
+        </script>
 </body>
 
 </html>

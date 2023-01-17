@@ -9,7 +9,6 @@
   <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="../css/style-login.css">
   <link rel="stylesheet" href="../css/style.css">
-  <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -28,19 +27,69 @@
     </nav>
   </header>
 
+  <main>
 
+  
   <div class="login-page">
     <div class="form">
-      <form class="login-form" action="login.php" method="post">
+      
+      <form class="login-form">
         <input type="text" placeholder="E-mail" name="email" id="email">
         <input type="password" placeholder="Senha" name="senha" id="senha">
-        <button>Logar</button>
+        <button type="button" id="entrarButton">Logar</button>
+      </form>
+      <div> 
         <p class="message">
           Não é cadastrado? <a href="./register.html">Crie uma conta</a>
         </p>
-      </form>
+        <p id="loginFailMsg">Dados incorretos. Por favor, tente novamente.</p>
+      </div>
     </div>
   </div>
+</main>
+
+  <script>
+    function enviaForm() {
+    
+    let xhr = new XMLHttpRequest();
+    
+    xhr.open("POST", "login.php");
+    xhr.onload = function () {
+      if (xhr.status != 200) {
+        console.error("Falha inesperada: " + xhr.responseText);
+        return;
+      }
+
+      try {
+        var response = JSON.parse(xhr.responseText);
+      }
+      catch (e) {
+        console.error("String JSON inválida: " + xhr.responseText);
+        return;
+      }
+
+      if (response.success)
+        window.location = response.detail;
+      else {
+        document.querySelector("#loginFailMsg").style.display = 'block';
+        form.senha.value = "";
+        form.senha.focus();
+      }
+    }
+
+    xhr.onerror = function () {
+      console.error("Erro de rede - requisição não finalizada");
+    };
+
+    const form = document.querySelector("form");
+    xhr.send(new FormData(form));
+  }
+  window.onload = function () {
+  const button = document.querySelector("#entrarButton");
+  button.onclick = enviaForm;
+  }
+</script>
+  
 
   <footer class="footer-section">
     <div class="footer">
@@ -54,6 +103,11 @@
         </ul>
     </div>
   </footer>
+
+  
+
+  
+
 </body>
 
 </html>

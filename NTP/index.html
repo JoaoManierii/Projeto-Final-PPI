@@ -22,17 +22,12 @@
                         <li class="navbar-item-li"><a href="./index.html">Pagina Inicial</a></li>
                         <li class="navbar-item-li"><a href="./pages/demonstracao.html">Demonstraçao</a></li>
                         <li class="button-login navbar-item-li"><a href="./pages/login.html">Login</a></li>
-                        <li class="button-login navbar-item-li"><a href="./pages/cadastrarAnuncio.html">Anunciar</a></li>
                     </div>
                 </ul>
             </div>
         </nav>
     </header>
-    <main>
-        <form action="" method="get">
-            in
-        </form>
-    </main>
+    
     <hr>
     <div class="container">
         <section class="title-section">
@@ -57,10 +52,15 @@
                     <li class="button-img">
                         <button type="submit">
                             <img src="./images/icons/search.svg" alt="">
+                            
                         </button>
                     </li>
                     <li>
-                        <input type="text" placeholder="Pesquise aqui seu novo produto!">
+                        <form action="./pages/buscaProduto.php" method="post">
+                            <input type="text" placeholder="Pesquise aqui seu novo produto!" name="produto" id="produto">
+                            <button>Enviar</button>
+                        </form>
+                        
                     </li>
                 </ul>
             </div>

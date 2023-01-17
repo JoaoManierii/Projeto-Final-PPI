@@ -1,38 +1,38 @@
 <?php
 
-function checkLogin($pdo, $email, $senha)
+require "autenticacao.php";
+require "conexaoMySql.php";
+
+session_start();
+
+class RequestResponse
 {
-  $sql = <<<SQL
-    SELECT senhaHash
-    FROM anunciante
-    WHERE email = ?
-    SQL;
+	public $success;
+	public $detail;
 
-  try {
-    // Neste caso utilize prepared statements para prevenir
-    // ataques do tipo SQL Injection, pois precisamos
-    // inserir dados fornecidos pelo usuário na 
-    // consulta SQL (o email do usuário)
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$email]);
-    $row = $stmt->fetch();
-    if (!$row) return false; // nenhum resultado (email não encontrado)
-
-    return password_verify($senha, $row['senhaHash']);
-  } 
-  catch (Exception $e) {
-    //error_log($e->getMessage(), 3, 'log.php');
-    exit('Falha inesperada: ' . $e->getMessage());
-  }
+	function __construct($success, $detail)
+	{
+		$this->success = $success;
+		$this->detail = $detail;
+	}
 }
 
-require "conexaoMySql.php";
+
+
+$email = $_POST['email'] ?? '';
+$senha = $_POST['senha']?? '';
+
 $pdo = mysqlConnect();
 
-$email = $_POST["email"] ?? "";
-$senha = $_POST["senha"]?? "";
+if ($senhaHash = checkLogin($pdo, $email, $senha)) {
+  $_SESSION['emailUsuario'] = $email;
+  $_SESSION['loginString'] = hash('sha512', $senhaHash . $_SERVER['HTTP_USER_AGENT']);
+  $response = new RequestResponse(true, 'index.php');
+}
+else{
+	$response = new RequestResponse(false, '');
+}
+  
+echo json_encode($response);
 
-if (checkLogin($pdo, $email, $senha))
-  header("location: paginaLogados.html");
-else
-  header("location: anuncio.html");
+?>

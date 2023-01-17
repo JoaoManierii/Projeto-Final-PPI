@@ -1,3 +1,14 @@
+<?php
+
+require "conexaoMySql.php";
+require "autenticacao.php";
+
+session_start();
+$pdo = mysqlConnect();
+exitWhenNotLogged($pdo);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,9 +17,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTP</title>
-    <link rel="shortcut icon" href="./images/logos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/style.css">
-    <script src="./js/main.js"></script>
+
+    <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/main.js"></script>
 </head>
 
 <body>
@@ -16,13 +28,15 @@
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a href='./index.html'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
-                    <li class="navbar-menu" id="navbar-menu"><img src="./images/icons/menu.svg" alt=""></li>
+                    <li><a href='index.php'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
+                    <li class="navbar-menu" id="navbar-menu"><img src="../images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
-                        <li class="navbar-item-li"><a href="./index.html">Pagina Inicial</a></li>
-                        <li class="navbar-item-li"><a href="./pages/demonstracao.html">Demonstraçao</a></li>
-                        <li class="button-login navbar-item-li"><a href="./pages/login.html">Login</a></li>
-                        <li class="button-login navbar-item-li"><a href="./pages/anuncio.html">Anunciar</a></li>
+                        <li class="navbar-item-li"><a href="index.php">Pagina Inicial</a></li>
+                        <li class="navbar-item-li"><a href="demonstracao.html">Demonstraçao</a></li>
+                        <li class="button-login navbar-item-li"><a href="login.html">Login</a></li>
+                        <li class="button-login navbar-item-li"><a href="cadastrarAnuncio.html">Anunciar</a></li>
+                        <li class="button-login navbar-item-li"><a href="listar.php">Meus anúncios</a></li>
+                        <li class="button-login navbar-item-li"><a href="logout.php">Sair</a></li>
                     </div>
                 </ul>
             </div>
@@ -51,7 +65,7 @@
                 <ul>
                     <li class="button-img">
                         <button type="submit">
-                            <img src="./images/icons/search.svg" alt="">
+                            <img src="../images/icons/search.svg" alt="">
                         </button>
                     </li>
                     <li>
@@ -61,10 +75,10 @@
             </div>
             <div class="cards">
                 <div class="card">
-                    <a href="./pages/anuncio.html?productId=iphone">
+                    <a href="anuncio.html?productId=iphone">
                         <div class="product-item">
                             <div class="img">
-                                <img src="images/index/iphone.jpg" alt="imagem do iphone">
+                                <img src="../images/index/iphone.jpg" alt="imagem do iphone">
                             </div>
                             <div class="txt">
                                 <p class="product-title">Iphone de 258 gb</p>
@@ -78,7 +92,7 @@
                     <a href="#">
                         <div class="product-item">
                             <div class="img">
-                                <img src="images/index/touca.png" alt="imagem touca de natacao">
+                                <img src="../images/index/touca.png" alt="imagem touca de natacao">
                             </div>
                             <div class="txt">
                                 <p class="product-title">Touca de Natacao</p>
@@ -92,7 +106,7 @@
                     <a href="#">
                         <div class="product-item">
                             <div class="img">
-                                <img src="images/index/jeep_compass.jpg" alt="Imagem do jeep compass">
+                                <img src="../images/index/jeep_compass.jpg" alt="Imagem do jeep compass">
                             </div>
                             <div class="txt">
                                 <p class="product-title">JEEP COMPASS</p>
@@ -106,7 +120,7 @@
                     <a href="#">
                         <div class="product-item">
                             <div class="img">
-                                <img src="images/index/camisa-da-rota.png" alt="Imagem da peita da rota">
+                                <img src="../images/index/camisa-da-rota.png" alt="Imagem da peita da rota">
                             </div>
                             <div class="txt">
                                 <p class="product-title">Camisa da ROTA-SP</p>
@@ -117,6 +131,8 @@
                 </div>
             </div>
         </section>
+
+        
     </div>
     <!--Footer-->
     <footer class="footer-section">
@@ -130,7 +146,8 @@
                 <li><a href="#">Contato</a></li>
             </ul>
         </div>
-    </footer>
+</footer>
+
 </body>
 
 </html>
