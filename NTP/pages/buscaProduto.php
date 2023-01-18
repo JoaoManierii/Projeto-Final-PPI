@@ -9,7 +9,7 @@ $produto = $_POST["produto"];
 try{
     $sql = <<<sql
         SELECT
-        titulo, descr,preco,dataHora,cep,bairro,cidade,estado,codCategoria,codAnunciante
+        codigo,titulo, descr,preco,dataHora,cep,bairro,cidade,estado,codCategoria,codAnunciante
         FROM anuncio
         WHERE descr like '%{$produto}%'
         sql;    
@@ -55,6 +55,7 @@ catch(Exception $e){
 <?php
 
 while ($row = $stmt->fetch()) {
+    $codigo = htmlspecialchars($row['codigo']);
     $titulo = htmlspecialchars($row['titulo']);
     $descr = htmlspecialchars($row["descr"]);
     $preco = htmlspecialchars($row["preco"]);
@@ -71,17 +72,14 @@ while ($row = $stmt->fetch()) {
     echo <<<HTML
 
 <div class="card">
-                    <a href="../pages/anuncio.html?productId=iphone">
+                    <a href="acessar.php?codigo={$codigo}">
                         <div class="product-item">
                             <div class="img">
                                 <img src="../images/index/iphone.jpg" alt="imagem do iphone">
                             </div>
                             <div class="txt">
                                 <p class="product-title">$titulo</p>
-                                <p class="product-price">$preco/p>
-                            </div>
-                            <div>
-                                <a href="interesse.html">Tenho interesse</a>
+                                <p class="product-price">$preco</p>
                             </div>
                         </div>
                     </a>
