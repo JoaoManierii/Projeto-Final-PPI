@@ -20,10 +20,10 @@ if($email === ""){
   $cidade = $_POST["cidade"] ?? "";
   $estado = $_POST["estado"] ?? "";
   $categoria = $_POST["codCategoria"] ?? "";
-  $img = $_FILES['tmp_name'];
-  $srcImg = "./images/anun/" + $img;
+  $img = $_FILES['nomeArqFoto'];
+  $srcImg = "./images/anun/".$img;
 
-    echo $categoria;
+  echo $srcImg;
 
 
   
@@ -76,12 +76,12 @@ if($email === ""){
           (?,?)
   sql;
   $ultimoIdInserido = $pdo->lastInsertId();
-  echo $ultimoIdInserido;
+  //echo $ultimoIdInserido;
   $stmt = $pdo->prepare($sql);
 
   $stmt->execute([$ultimoIdInserido,$srcImg]);
   // movendo a foto para o diretorio;
-  move_uploaded_file($_FILES['tmp_name'], $img);
+  move_uploaded_file($_FILES['nomeArqFoto'], $img);
     } catch (Exception $e) {
       exit('Falha ao cadastrar os dados: ' . $e->getMessage());
     }

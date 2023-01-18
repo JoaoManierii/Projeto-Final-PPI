@@ -80,6 +80,9 @@ while ($row = $stmt->fetch()) {
                                 <p class="product-title">$titulo</p>
                                 <p class="product-price">$preco/p>
                             </div>
+                            <div>
+                                <a href="interesse.html">Tenho interesse</a>
+                            </div>
                         </div>
                     </a>
                 </div>
