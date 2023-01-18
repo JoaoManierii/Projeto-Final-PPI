@@ -1,45 +1,26 @@
 <?php
+
 require "conexaoMySql.php";
 
-
-session_start();
 $pdo = mysqlConnect();
 
-
-$email = $_SESSION["emailUsuario"];
-
+$produto = $_POST["produto"];
+$min = $_POST["min"];
+$max = $_POST["max"];
+$categoria = $_POST['codCategoria'];
 
 try{
     $sql = <<<sql
-      SELECT codigo FROM anunciante
-          WHERE anunciante.email = ?
-  sql;
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute([$email]);
-      $row = $stmt->fetch();
-      $id = $row['codigo'];
-  }catch (Exception $e) {
-      exit('Ocorreu uma falha: ' . $e->getMessage());
-  }
-
-
-try{
-
-    $sql = <<<SQL
         SELECT
         codigo,titulo, descr,preco,dataHora,cep,bairro,cidade,estado,codCategoria,codAnunciante
         FROM anuncio
-        WHERE codAnunciante = "{$id}"
-    SQL;    
-
-    $stmt = $pdo->query($sql);
+        WHERE descr like '%{$produto}%'AND preco between {$min} and {$max} AND codCategoria = {$categoria}
+        sql;    
+        $stmt = $pdo->query($sql);
 }
-
 catch(Exception $e){
     exit("Ocorreu uma falha: " . $e->getMessage());
 }
-
-
 ?>
 
 
@@ -59,23 +40,19 @@ catch(Exception $e){
 <body>
     <header>
         <nav>
-        <div class="navbar">
+            <div class="navbar">
                 <ul>
-                    <li><a href='index.php'><img src="../images/logos/logo.png" alt="Imagem logo"></a></li>
-                    <li class="navbar-menu" id="navbar-menu"><img src="../images/icons/menu.svg" alt=""></li>
+                    <li><a href='./index.html'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
+                    <li class="navbar-menu" id="navbar-menu"><img src="./images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
-                        <li class="navbar-item-li"><a href="index.php">Pagina Inicial</a></li>
-                        <li class="navbar-item-li"><a href="demonstracao.html">Demonstraçao</a></li>
-                        <li class="button-login navbar-item-li"><a href="login.html">Login</a></li>
-                        <li class="button-login navbar-item-li"><a href="cadastrarAnuncio.html">Anunciar</a></li>
-                        <li class="button-login navbar-item-li"><a href="listar.php">Meus anúncios</a></li>
-                        <li class="button-login navbar-item-li"><a href="logout.php">Sair</a></li>
+                        <li class="navbar-item-li"><a href="./index.html">Pagina Inicial</a></li>
+                        <li class="navbar-item-li"><a href="./pages/demonstracao.html">Demonstraçao</a></li>
+                        <li class="button-login navbar-item-li"><a href="./pages/login.html">Login</a></li>
                     </div>
                 </ul>
             </div>
         </nav>
     </header>
-    <h1>MEUS ANÚNCIOS</h1>
 <div class="cards">
  
 <?php
@@ -105,9 +82,8 @@ while ($row = $stmt->fetch()) {
                             </div>
                             <div class="txt">
                                 <p class="product-title">$titulo</p>
-                                <p class="product-price">$preco/p>
+                                <p class="product-price">$preco</p>
                             </div>
-    
                         </div>
                     </a>
                 </div>

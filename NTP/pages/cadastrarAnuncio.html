@@ -32,15 +32,8 @@
             <div class="login-page">
                 <div class="form">
                     <form class="login-form" action="cadastraAnun.php" method="post">
-                        <div class="galeria">
-                            <label class="imagens" tabindex="0">
-                                <p class="insert">INSERIR IMAGEM</p>
-                                <input class="imgInput" type="file" accept="images/*" name="nomeArqFoto">
-                                <span class="imgImage">
-                                    <img id="imgs" class="imgs" src="">
-                                </span>
-                            </label>
-                        </div>
+                        <input type="file" name="nomeArqFoto" id="nomeArqFoto">
+                        
                         <input type="text" placeholder="Titulo" name="titulo" id="titulo">
                         <input type="text" placeholder="Descriçao" name="descr" id="descr">
                         <input type="number" placeholder="Preço" name="preco" id="preco">
@@ -86,7 +79,7 @@
                     <option value="10">Vestuário</option>
                     <option value="11">Outros</option>
                 </select>
-                <button>Cadastrar</button>
+                <button name="submit">Cadastrar</button>
                 </form>
             </div>
             </div>
@@ -106,6 +99,7 @@
 
         <script>
             
+            /*
             const inputFile =  document.querySelector('.imgInput');
             const spanImage = document.querySelector('.imgImage');
     
@@ -127,7 +121,7 @@
                 }else{
                     spanImage.innerHTML = spanImageText;
                 }
-            });
+            }); */
 
 
     function buscaEndereco(cep) {

@@ -21,7 +21,7 @@ if($email === ""){
   $estado = $_POST["estado"] ?? "";
   $categoria = $_POST["codCategoria"] ?? "";
   $img = $_FILES['nomeArqFoto'];
-  $srcImg = "./images/anun/".$img;
+  //$srcImg = "./images/anun/".$img;
 
   echo $srcImg;
 
@@ -70,6 +70,11 @@ if($email === ""){
     $stmt->execute([$titulo, $id]);
     $row = $stmt->fetch();
     $codigo_anuncio = $row['codigo']; */
+
+
+
+
+    /*
     try{
       $sql = <<<sql
       INSERT INTO foto VALUES
@@ -84,7 +89,83 @@ if($email === ""){
   move_uploaded_file($_FILES['nomeArqFoto'], $img);
     } catch (Exception $e) {
       exit('Falha ao cadastrar os dados: ' . $e->getMessage());
+    } */
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    
+
+    try{
+
+   
+    // Check if image file is a actual image or fake image
+    if (isset($_POST['submit'])) {
+
+
+      move_uploaded_file($_FILES['nomeArqFoto']['tmp_name'], './pages/imgAnun/'.$_FILES['nomeArqFoto']['name']);
+
+      $sql = <<<sql
+      INSERT INTO foto VALUES
+          (?,?)
+    sql;
+
+      $src = $_FILES['nomeArqFoto']['name'];
+      $stmt = $pdo->prepare($sql);
+      $ultimoIdInserido = $pdo->lastInsertId();
+
+      $stmt->execute([$ultimoIdInserido, $src]);
+       
+  
+  
     }
+
+      
+    
+    //echo $ultimoIdInserido;
+    
+
+
+    // movendo a foto para o diretorio;
+  
+    } catch (Exception $e) {
+      exit('Falha ao cadastrar os dados: ' . $e->getMessage());
+    } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     try{
       $sql = <<<sql

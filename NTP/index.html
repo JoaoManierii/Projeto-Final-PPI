@@ -62,7 +62,32 @@
                         </form>
                         
                     </li>
+                    
+                        
+                        
+                    
                 </ul>
+
+                <button class="modalBtn"> Busca Avançada</button>
+                        <div class="modal">
+                            <div class="content">
+                                <form action="./pages/buscaAvancada.php" method="post">
+                                    <input type="text" placeholder="Pesquise aqui seu novo produto!" name="produto" id="produto">
+                                    <input type="number" placeholder="PREÇO MINIMO" name="min" id="min">
+                                    <input type="number" placeholder="PREÇO MÁXIMO" name="max" id="max">
+                                    <select  name="codCategoria" id="codCategoria">
+                                        <option value="" disabled selected>Categoria</option>
+                                        <option value="6">Veículo</option>
+                                        <option value="7">Eletroeletrônico</option>
+                                        <option value="8">Imóvel</option>
+                                        <option value="9">Móvel</option>
+                                        <option value="10">Vestuário</option>
+                                        <option value="11">Outros</option>
+                                    </select>
+                                    <button>Enviar</button>
+                                </form>
+                            </div>
+                        </div>
             </div>
             <div class="cards">
                 <div class="card">
@@ -137,5 +162,30 @@
         </div>
     </footer>
 </body>
+
+<script>
+    const switchModal = () =>{
+
+        const modal = document.querySelector('.modal');
+        const actualStyle = modal.style.display;
+        if(actualStyle=='block'){
+            modal.style.display = 'none';
+        }
+        else{
+            modal.style.display ='block';
+        }
+
+    }
+
+    const btn = document.querySelector('.modalBtn');
+    btn.addEventListener('click',switchModal);
+
+    window.onclick = function(event){
+        const modal = document.querySelector('.modal');
+        if(event.target == modal){
+            switchModal();
+        }
+            }
+</script>
 
 </html>
