@@ -29,7 +29,7 @@
 		$enderecos[$row['cep']] = new Endereco($row['bairro'], $row['cidade'], $row['estado']);
 	}
 
-	$cep = $_GET['cep'] ?? '';
+	$cep = $_POST['cep'] ?? '';
 
 	$endereco = array_key_exists($cep, $enderecos) ? 
 	  $enderecos[$cep] : new Endereco('', '', '');
