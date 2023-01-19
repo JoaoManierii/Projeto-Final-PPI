@@ -105,7 +105,7 @@ while ($row = $stmt->fetch()) {
                             </div>
                             <div class="txt">
                                 <p class="product-title">$titulo</p>
-                                <p class="product-price">$preco/p>
+                                <p class="product-price">R$ $preco</p>
                             </div>
     
                         </div>
