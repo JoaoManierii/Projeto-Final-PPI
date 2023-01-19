@@ -107,9 +107,16 @@ while ($row = $stmt->fetch()) {
                                 <p class="product-title">$titulo</p>
                                 <p class="product-price">R$ $preco</p>
                             </div>
+                            <div>
+                           
+                            </div>
+                            
     
                         </div>
                     </a>
+                    <a href="exclui-anun.php?codigo=$codigo">
+                                <img src="../images/icons/delete.png">
+                            </a>
                 </div>
 
 

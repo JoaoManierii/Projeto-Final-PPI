@@ -18,6 +18,7 @@
 	  }
 	}
 
+
 	$sql = <<<SQL
 		SELECT cep, bairro, cidade, estado
 		FROM enderecoAjax
@@ -29,7 +30,7 @@
 		$enderecos[$row['cep']] = new Endereco($row['bairro'], $row['cidade'], $row['estado']);
 	}
 
-	$cep = $_POST['cep'] ?? '';
+	$cep = $_GET['cep'] ?? '';
 
 	$endereco = array_key_exists($cep, $enderecos) ? 
 	  $enderecos[$cep] : new Endereco('', '', '');
