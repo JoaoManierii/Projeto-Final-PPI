@@ -31,5 +31,7 @@ try {
   catch (Exception $e) {  
     exit('Falha ao cadastrar os dados: ' . $e->getMessage());
   }
+  header('Location: ../index.html');
 
 ?>
+

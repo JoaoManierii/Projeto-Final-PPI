@@ -115,9 +115,11 @@ while ($row = $stmt->fetch()) {
                         </div>
                     </a>
                     <a href="exclui-anun.php?codigo=$codigo">
-                                <img src="../images/icons/delete.png">
+                                Excluir
                             </a>
+                    
                 </div>
+               
 
 
 
