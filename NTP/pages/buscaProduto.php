@@ -75,7 +75,7 @@ while ($row = $stmt->fetch()) {
                     <a href="acessar.php?codigo={$codigo}">
                         <div class="product-item">
                             <div class="img">
-                                <img src="../images/index/iphone.jpg" alt="imagem do iphone">
+                                <img src="../images/icons/un.png" alt="imagem do iphone">
                             </div>
                             <div class="txt">
                                 <p class="product-title">$titulo</p>

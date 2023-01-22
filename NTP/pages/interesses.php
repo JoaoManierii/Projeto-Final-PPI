@@ -27,9 +27,10 @@ try{
 
     $sql = <<<SQL
         SELECT
-        codigo,titulo, descr,preco,dataHora,cep,bairro,cidade,estado,codCategoria,codAnunciante
-        FROM anuncio
-        WHERE codAnunciante = "{$id}"
+        interesse.mensagem, interesse.dataHora,interesse.contato,interesse.codAnuncio, anuncio.codAnunciante
+        FROM interesse 
+        INNER JOIN anuncio ON interesse.codAnuncio = anuncio.codigo
+        WHERE codAnunciante = "{$id}" 
     SQL;    
 
     $stmt = $pdo->query($sql);
@@ -39,8 +40,8 @@ catch(Exception $e){
     exit("Ocorreu uma falha: " . $e->getMessage());
 }
 
-
 ?>
+
 
 
 <!DOCTYPE html>
@@ -81,31 +82,23 @@ catch(Exception $e){
 <?php
 
 while ($row = $stmt->fetch()) {
-    $codigo = htmlspecialchars($row['codigo']);
-    $titulo = htmlspecialchars($row['titulo']);
-    $descr = htmlspecialchars($row["descr"]);
-    $preco = htmlspecialchars($row["preco"]);
-    $dataHora = htmlspecialchars($row["dataHora"]);
-    $cep = htmlspecialchars($row["cep"]);
-    $bairro = htmlspecialchars($row["bairro"]);
-    $cidade = htmlspecialchars($row["cidade"]);
-    $estado = htmlspecialchars($row["estado"]);
-    $codCategoria = htmlspecialchars($row["codCategoria"]);
-    $codAnunciante = htmlspecialchars($row["codAnunciante"]);
+    $mensagem = htmlspecialchars($row['mensagem']);
+    $dataHora = htmlspecialchars($row['dataHora']);
+    $contato = htmlspecialchars($row["contato"]);
+    
 
 
 
     echo <<<HTML
 
-<div class="card">
-                    <a href="acessarRestrito.php?codigo={$codigo}">
+
+                    
                         <div class="product-item">
-                            <div class="img">
-                                <img src="../images/icons/un.png" alt="imagem do iphone">
-                            </div>
                             <div class="txt">
-                                <p class="product-title">$titulo</p>
-                                <p class="product-price">R$ $preco</p>
+                            <p class="product-price">Contato: $contato</p>
+                                <p class="product-title">Mensagem: $mensagem</p>
+                                <p class="product-price">Data e hora: $dataHora</p>
+                                
                             </div>
                             <div>
                            
@@ -113,8 +106,8 @@ while ($row = $stmt->fetch()) {
                             
     
                         </div>
-                    </a>
-                    <a href="exclui-anun.php?codigo=$codigo">
+                    
+                    <a href="exclui-interesse.php?codigo=$codigo">
                                 Excluir
                             </a>
                     
@@ -128,7 +121,7 @@ HTML;
 
 ?>
 
-</div>
+
 
 
 </body>

@@ -121,7 +121,6 @@ HTML;
             <h2 class="anunciante-name" id="name">$nome</h2>
             <h2 class="anunciante-tel" id="tel">$email</h2>
             <button class="button-comprar">Comprar</button>
-            <a href="interesse.php?codigo={$codigo}"><button class="button-chat">Tenho interesse</button></a>
             
         </div>
 

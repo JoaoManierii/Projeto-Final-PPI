@@ -28,7 +28,7 @@ exitWhenNotLogged($pdo);
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a href='index.php'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
+                    <li><a href='index.php'><img src="../images/logos/logo.png" alt="Imagem logo"></a></li>
                     <li class="navbar-menu" id="navbar-menu"><img src="../images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
                         <li class="navbar-item-li"><a href="index.php">Pagina Inicial</a></li>
@@ -36,6 +36,7 @@ exitWhenNotLogged($pdo);
                         <li class="button-login navbar-item-li"><a href="login.html">Login</a></li>
                         <li class="button-login navbar-item-li"><a href="cadastrarAnuncio.html">Anunciar</a></li>
                         <li class="button-login navbar-item-li"><a href="listar.php">Meus anúncios</a></li>
+                        <li class="button-login navbar-item-li"><a href="interesses.php">Chat</a></li>
                         <li class="button-login navbar-item-li"><a href="logout.php">Sair</a></li>
                     </div>
                 </ul>

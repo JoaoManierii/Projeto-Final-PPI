@@ -33,14 +33,14 @@
                     <form class="login-form" action="cadastraAnun.php" method="post">
                         <input type="file" name="nomeArqFoto" id="nomeArqFoto">
                         
-                        <input type="text" placeholder="Titulo" name="titulo" id="titulo">
-                        <input type="text" placeholder="Descriçao" name="descr" id="descr">
-                        <input type="number" placeholder="Preço" name="preco" id="preco">
-                        <input type="text" placeholder="CEP" name="cep" id="cep">
-                        <input type="text" placeholder="Bairro" name="bairro" id="bairro">
-                        <input type="text" placeholder="Cidade" name="cidade" id="cidade">
-                        <input type="text" placeholder="Estado" name="estado" id="estado">
-                <select  name="codCategoria" id="codCategoria">
+                        <input type="text" placeholder="Titulo" name="titulo" id="titulo" required>
+                        <input type="text" placeholder="Descriçao" name="descr" id="descr" required>
+                        <input type="number" placeholder="Preço" name="preco" id="preco" required>
+                        <input type="text" placeholder="CEP" name="cep" id="cep" required>
+                        <input type="text" placeholder="Bairro" name="bairro" id="bairro" required>
+                        <input type="text" placeholder="Cidade" name="cidade" id="cidade" required>
+                        <input type="text" placeholder="Estado" name="estado" id="estado"required>
+                <select  name="codCategoria" id="codCategoria" required>
                     <option value="" disabled selected>Categoria</option>
                     <option value="6">Veículo</option>
                     <option value="7">Eletroeletrônico</option>
@@ -69,30 +69,7 @@
 
         <script>
             
-            /*
-            const inputFile =  document.querySelector('.imgInput');
-            const spanImage = document.querySelector('.imgImage');
-    
-            inputFile.addEventListener('change', function(e){
-                const inputTarget = e.target;
-                const file = inputTarget.files[0];
-    
-                if (file){
-                    const reader = new FileReader();
-                    reader.addEventListener('load', function(e){
-                        const readerTarget = e.target;
-                        const img =  document.createElement('img');
-                        img.src = readerTarget.result;
-                        img.classList.add('imgs');
-    
-                        spanImage.appendChild(img);
-                    });
-                    reader.readAsDataURL(file);
-                }else{
-                    spanImage.innerHTML = spanImageText;
-                }
-            }); */
-
+        
 
     function buscaEndereco(cep) {
       if (cep.length != 9) return;

@@ -42,7 +42,7 @@ catch(Exception $e){
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a href='./index.html'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
+                    <li><a href='./index.html'><img src="../images/logos/logo.png" alt="Imagem logo"></a></li>
                     <li class="navbar-menu" id="navbar-menu"><img src="./images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
                         <li class="navbar-item-li"><a href="./index.html">Pagina Inicial</a></li>
@@ -78,7 +78,7 @@ while ($row = $stmt->fetch()) {
                     <a href="acessar.php?codigo={$codigo}">
                         <div class="product-item">
                             <div class="img">
-                                <img src="../images/index/iphone.jpg" alt="imagem do iphone">
+                                <img src="../images/icons/un.png" alt="imagem do iphone">
                             </div>
                             <div class="txt">
                                 <p class="product-title">$titulo</p>

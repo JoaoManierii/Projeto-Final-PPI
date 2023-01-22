@@ -371,12 +371,12 @@ a {
         <nav>
             <div class="navbar">
                 <ul>
-                    <li><a href='./index.html'><img src="images/logos/logo.png" alt="Imagem logo"></a></li>
+                    <li><a href='../index.html'><img src="../images/logos/logo.png" alt="Imagem logo"></a></li>
                     <li class="navbar-menu" id="navbar-menu"><img src="./images/icons/menu.svg" alt=""></li>
                     <div class="navbar-item" id="navbar-item">
-                        <li class="navbar-item-li"><a href="./index.html">Pagina Inicial</a></li>
-                        <li class="navbar-item-li"><a href="./pages/demonstracao.html">Demonstraçao</a></li>
-                        <li class="button-login navbar-item-li"><a href="./pages/login.html">Login</a></li>
+                        <li class="navbar-item-li"><a href="../index.html">Pagina Inicial</a></li>
+                        <li class="navbar-item-li"><a href="../pages/demonstracao.html">Demonstraçao</a></li>
+                        <li class="button-login navbar-item-li"><a href="../pages/login.html">Login</a></li>
                     </div>
                 </ul>
             </div>
