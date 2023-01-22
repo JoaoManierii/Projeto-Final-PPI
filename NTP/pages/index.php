@@ -37,6 +37,7 @@ exitWhenNotLogged($pdo);
                         <li class="button-login navbar-item-li"><a href="cadastrarAnuncio.html">Anunciar</a></li>
                         <li class="button-login navbar-item-li"><a href="listar.php">Meus anúncios</a></li>
                         <li class="button-login navbar-item-li"><a href="interesses.php">Chat</a></li>
+                        <li class="button-login navbar-item-li"><a href="perfil.php">Meu perfil</a></li>
                         <li class="button-login navbar-item-li"><a href="logout.php">Sair</a></li>
                     </div>
                 </ul>

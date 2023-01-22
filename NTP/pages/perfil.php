@@ -22,15 +22,13 @@ try{
       exit('Ocorreu uma falha: ' . $e->getMessage());
   }
 
-
 try{
 
     $sql = <<<SQL
         SELECT
-        interesse.mensagem, interesse.dataHora,interesse.contato,interesse.codAnuncio, anuncio.codAnunciante
-        FROM interesse 
-        INNER JOIN anuncio ON interesse.codAnuncio = anuncio.codigo
-        WHERE codAnunciante = "{$id}" 
+        nome,cpf, email,senhaHash,telefone
+        FROM anunciante
+        WHERE codigo = {$id}
     SQL;    
 
     $stmt = $pdo->query($sql);
@@ -40,8 +38,8 @@ catch(Exception $e){
     exit("Ocorreu uma falha: " . $e->getMessage());
 }
 
-?>
 
+?>
 
 
 <!DOCTYPE html>
@@ -77,51 +75,38 @@ catch(Exception $e){
         </nav>
     </header>
     <h1>MEUS ANÚNCIOS</h1>
-<div class="cards">
+
  
 <?php
 
 while ($row = $stmt->fetch()) {
     $codigo = htmlspecialchars($row['codigo']);
-    $mensagem = htmlspecialchars($row['mensagem']);
-    $dataHora = htmlspecialchars($row['dataHora']);
-    $contato = htmlspecialchars($row["contato"]);
-    
+    $nome = htmlspecialchars($row['nome']);
+    $cpf = htmlspecialchars($row['cpf']);
+    $email = htmlspecialchars($row["email"]);
+    $telefone = htmlspecialchars($row["telefone"]);
+
+
 
 
 
     echo <<<HTML
 
-
-                    
-                        <div class="product-item">
-                            <div class="txt">
-                            <p class="product-price">Contato: $contato</p>
-                                <p class="product-title">Mensagem: $mensagem</p>
-                                <p class="product-price">Data e hora: $dataHora</p>
-                                
-                            </div>
-                            <div>
-                           
-                            </div>
-                            
-    
-                        </div>
-                    
-                    <a href="exclui-interesse.php?codigo=$codigo">
-                                Excluir
-                            </a>
-                    
-                </div>
-               
+    <div>
+        <p>NOME: $nome</p>
+        <p>CPF: $cpf</p>
+        <p>Email: $email</p>
+        <p>Telefone: $nome</p>
 
 
+        <a href="alteraDadosFORM.php?codigo=$codigo">Alterar Dados</a>
+    </div>
+        
 
 HTML;
 }
 
 ?>
-
 
 
 
