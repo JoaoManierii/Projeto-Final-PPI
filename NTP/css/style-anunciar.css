@@ -52,19 +52,16 @@ body {
 }
 
 .login-page {
-    min-height: 100vh;
-    width: 360px;
-    padding: 5% 0 0;
-    margin: auto;
+    padding: 5%;
 }
 
 .form {
     position: relative;
     z-index: 1;
     background: #FFFFFF;
-    max-width: 360px;
-    margin: 0 auto 100px;
+    width: 800px;
     border-radius: 12px;
+    margin-left: 28%;
     padding: 45px;
     text-align: center;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
@@ -155,3 +152,21 @@ body {
 .footer li a {
     color: whitesmoke;
 }
+
+@media (max-width: 450px) { 
+    
+    .form {
+        position: relative;
+        z-index: 1;
+        background: #FFFFFF;
+        max-width: 360px;
+        margin: 0 auto 100px;
+        border-radius: 12px;
+        padding: 45px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    }
+
+}
+
+
