@@ -56,6 +56,7 @@ if($email === ""){
 
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$titulo, $descr, $preco,$cep, $bairro, $cidade, $estado, $categoria, $id]);
+		header("Location: valida.html");
 
   } catch (Exception $e) {
     exit('Falha ao cadastrar os dados: ' . $e->getMessage());
