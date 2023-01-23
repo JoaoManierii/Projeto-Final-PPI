@@ -94,29 +94,14 @@ while ($row = $stmt->fetch()) {
 
 
                     
-                        <div class="product-item">
-                            <div class="txt">
+                        <div class="form">
+                            <div class="data">
                             <p class="product-price">Contato: $contato</p>
                                 <p class="product-title">Mensagem: $mensagem</p>
                                 <p class="product-price">Data e hora: $dataHora</p>
-                                
                             </div>
-                            <div>
-                           
-                            </div>
-                            
-    
+                            <a href="exclui-interesse.php?codigo=$codigo">Excluir</a> 
                         </div>
-                    
-                    <a href="exclui-interesse.php?codigo=$codigo">
-                                Excluir
-                            </a>
-                    
-                </div>
-               
-
-
-
 HTML;
 }
 

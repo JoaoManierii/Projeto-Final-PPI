@@ -1,47 +1,3 @@
-<?php
-require "conexaoMySql.php";
-
-
-session_start();
-$pdo = mysqlConnect();
-
-
-$email = $_SESSION["emailUsuario"];
-
-
-try{
-    $sql = <<<sql
-      SELECT codigo FROM anunciante
-          WHERE anunciante.email = ?
-  sql;
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute([$email]);
-      $row = $stmt->fetch();
-      $id = $row['codigo'];
-  }catch (Exception $e) {
-      exit('Ocorreu uma falha: ' . $e->getMessage());
-  }
-
-try{
-
-    $sql = <<<SQL
-        SELECT
-        nome,cpf, email,senhaHash,telefone
-        FROM anunciante
-        WHERE codigo = {$id}
-    SQL;    
-
-    $stmt = $pdo->query($sql);
-}
-
-catch(Exception $e){
-    exit("Ocorreu uma falha: " . $e->getMessage());
-}
-
-
-?>
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -51,14 +7,14 @@ catch(Exception $e){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTP</title>
     <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style-perfil.css">
+    <link rel="stylesheet" href="../css/style-interesses.css">
     <script src="../js/main.js"></script>
 </head>
 
 <body>
     <header>
         <nav>
-        <div class="navbar">
+            <div class="navbar">
                 <ul>
                     <li><a href='index.php'><img src="../images/logos/logo.png" alt="Imagem logo"></a></li>
                     <li class="navbar-menu" id="navbar-menu"><img src="../images/icons/menu.svg" alt=""></li>
@@ -75,23 +31,6 @@ catch(Exception $e){
         </nav>
     </header>
     <h1>MEUS ANÚNCIOS</h1>
-
- 
-<?php
-
-while ($row = $stmt->fetch()) {
-    $codigo = htmlspecialchars($row['codigo']);
-    $nome = htmlspecialchars($row['nome']);
-    $cpf = htmlspecialchars($row['cpf']);
-    $email = htmlspecialchars($row["email"]);
-    $telefone = htmlspecialchars($row["telefone"]);
-
-
-
-
-
-    echo <<<HTML
-
     <div class="form">
         <div class="data">
             <p>NOME: $nome</p>
@@ -99,18 +38,7 @@ while ($row = $stmt->fetch()) {
             <p>Email: $email</p>
             <p>Telefone: $nome</p>
         </div>
-    </div>
         <a href="alteraDadosFORM.php?codigo=$codigo">Alterar Dados</a>
     </div>
-        
-
-HTML;
-}
-
-?>
-
-
-
 </body>
-
 </html>
