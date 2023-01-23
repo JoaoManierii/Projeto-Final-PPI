@@ -90,19 +90,8 @@ if($email === ""){
     } catch (Exception $e) {
       exit('Falha ao cadastrar os dados: ' . $e->getMessage());
     } */
-
-
-
-
-
-
-
-
-
-
-
     
-
+/*
     
 
     try{
@@ -139,8 +128,7 @@ if($email === ""){
   
     } catch (Exception $e) {
       exit('Falha ao cadastrar os dados: ' . $e->getMessage());
-    } 
-
+    } */
 
 
 
