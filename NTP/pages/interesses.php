@@ -53,7 +53,7 @@ catch(Exception $e){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTP</title>
     <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-interesses.css">
     <script src="../js/main.js"></script>
 </head>
 
@@ -102,6 +102,7 @@ while ($row = $stmt->fetch()) {
                             </div>
                             <a href="exclui-interesse.php?codigo=$codigo">Excluir</a> 
                         </div>
+                        <br>
 HTML;
 }
 

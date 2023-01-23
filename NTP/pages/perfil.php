@@ -51,7 +51,7 @@ catch(Exception $e){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NTP</title>
     <link rel="shortcut icon" href="../images/logos/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../css/style-perfil.css">
+    <link rel="stylesheet" href="../css/style-interesses.css">
     <script src="../js/main.js"></script>
 </head>
 
@@ -74,7 +74,7 @@ catch(Exception $e){
             </div>
         </nav>
     </header>
-    <h1>MEUS ANÚNCIOS</h1>
+    <h1>MEUS CHATS</h1>
 
  
 <?php
@@ -99,7 +99,7 @@ while ($row = $stmt->fetch()) {
             <p>Email: $email</p>
             <p>Telefone: $nome</p>
         </div>
-    </div>
+    <div>
         <a href="alteraDadosFORM.php?codigo=$codigo">Alterar Dados</a>
     </div>
         
@@ -109,7 +109,7 @@ HTML;
 
 ?>
 
-
+</div>
 
 </body>
 
